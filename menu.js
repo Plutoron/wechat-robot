@@ -10,21 +10,23 @@ const menuItem = {
 			'key': 'conversation-history'
 		},
 		{
-			'type': 'click',
+			'type': 'view',
 			'name': '随机问答',
-			'key': 'conversation-random'
+			'url': "http://123.206.212.174/wechat/random" //这里要双引号！！！
 		}
 	]
 };
 
-schedule.scheduleJob({ second: 0,minute: 0 }, function(){
-  console.log('The answer to life, the universe, and everything!');
-  doMenuSync();
-});
+doMenuSync();
 
-setInterval(function () {
-	console.log(new Date());
-}, 2000);
+// schedule.scheduleJob({ second: 0,minute: 0 }, function(){
+//   console.log('The answer to life, the universe, and everything!');
+//   doMenuSync();
+// });
+
+// setInterval(function () {
+// 	console.log(new Date());
+// }, 2000);
 
 function doMenuSync() {
 	jssdk.getAccessToken(function (err, token) {
